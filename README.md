@@ -1,120 +1,107 @@
+# Console Hangman Game
 
-# UK Property Price Prediction Analysis
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Functions](#functions)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-This repository contains a project that aims to predict property prices in the UK using a dataset from Kaggle. The analysis and model building are performed using PySpark.
+## Introduction
+This project is a console-based Hangman game implemented in assembly language. It includes several features such as clearing the screen, changing background colors, generating random numbers, printing strings, and drawing the hangman character based on the player's guesses.
 
-## Project Overview
+## Features
+- **Home Screen**: Displays a welcome screen with the game's title and team members.
+- **Game Loop**: Core loop of the game where the player guesses the letters of a randomly chosen word.
+- **Drawing Hangman**: Visual representation of the hangman based on incorrect guesses.
+- **Winning and Losing Messages**: Displays appropriate messages based on the player's performance.
 
-The goal of this project is to predict property prices in the UK using an official dataset. The dataset includes comprehensive information about property transactions. The approach involves data preprocessing, exploratory data analysis (EDA), feature engineering, and the application of machine learning algorithms using PySpark.
-
-## Student Details
-
-- **Name**: Muhammad Talha Asif
-- **Roll No**: 22L-7510
-- **Section**: BDS-4B
-- **Instructor**: Mam Asbah Khalid
-
-## Dataset Description
-
-The dataset contains the following columns:
-- Transaction_ID
-- price
-- Date_of_Transfer
-- postcode
-- Property_Type
-- Old/New
-- Duration
-- PAON
-- SAON
-- Street
-- Locality
-- Town/City
-- District
-- County
-- PPDCategory_Type
-- Record_Status - monthly_file_only
-
-## Approach
-
-### 1. Data Preprocessing
-- Loaded the dataset using PySpark.
-- Handled missing values by either imputing them or dropping the rows/columns with significant missing data.
-- Converted categorical variables into numerical formats using techniques such as one-hot encoding.
-
-### 2. Exploratory Data Analysis (EDA)
-- Analyzed the distribution of property prices.
-- Investigated the relationships between different features and the target variable (price).
-- Visualized data using histograms, scatter plots, and correlation matrices to identify significant features.
-
-### 3. Feature Engineering
-- Extracted useful features from existing columns (e.g., extracting year and month from Date_of_Transfer).
-- Created new features that might help improve the prediction model, such as average property price in a postcode area.
-
-### 4. Model Selection and Training
-- Split the dataset into training and testing sets.
-- Used various regression algorithms to predict property prices, including Linear Regression, Decision Trees, and Random Forest.
-- Evaluated the performance of each model using metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R-squared.
-
-### 5. Model Evaluation
-- Selected the best-performing model based on evaluation metrics.
-- Fine-tuned the model using hyperparameter optimization techniques.
-
-### 6. Prediction
-- Used the trained model to predict property prices on the test dataset.
-- Visualized the predicted vs actual prices to assess the model's performance.
-
-## Results
-
-The project successfully demonstrated the use of PySpark for handling large datasets and building machine learning models. The selected model provided a reasonable prediction accuracy and the approach can be further improved by incorporating more advanced techniques and additional data sources.
-
-## Code Implementation
-
-The code implementation for this project can be found in the `big_data_project.py` script.
+## Prerequisites
+- An assembler like NASM (Netwide Assembler).
+- An emulator like DOSBox to run the assembled code.
 
 ## Installation
-
-To run this project, you need to have the following dependencies installed:
-
-- PySpark
-- Pandas
-
-You can install these dependencies using pip:
-
-```bash
-pip install pyspark pandas
-```
+1. Clone the repository to your local machine:
+    ```sh
+    git clone <repository-url>
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd console-hangman-game
+    ```
+3. Assemble the code using NASM:
+    ```sh
+    nasm -f bin -o hangman.com hangman.asm
+    ```
 
 ## Usage
+1. Run the assembled executable:
+    ```sh
+    dosbox hangman.com
+    ```
+2. Follow the on-screen instructions to play the game.
 
-1. Clone the repository:
+## Functions
+### clearScreen
+Clears the console screen.
 
-```bash
-git clone https://github.com/yourusername/uk-property-price-prediction.git
-```
+### Change_Background_Color
+Changes the background color of the console screen.
 
-2. Navigate to the project directory:
+### GenRandNum
+Generates a random number between 0 and 9.
 
-```bash
-cd uk-property-price-prediction
-```
+### printstr
+Prints a string on the console screen at a specified position.
 
-3. Upload the dataset file (`202304.csv`) to the appropriate directory.
+### Home_Screen
+Displays the home screen with the game's title and team members.
 
-4. Run the script:
+### PrintBorder
+Draws a border on the console screen.
 
-```bash
-python big_data_project.py
-```
+### printInputline
+Prints the input prompt for the player.
+
+### Draw_Man
+Draws the hangman character based on the player's incorrect guesses.
+
+### Print_Charcter
+Prints the correctly guessed character in the word.
+
+### Game_Loop
+Main game loop where the player guesses letters.
+
+### Print_Died_MSG
+Displays the message when the player loses the game.
+
+### PrintWinningMSG
+Displays the message when the player wins the game.
+
+### Print_ThankYou
+Displays a thank you message after the game ends.
+
+### Play_Again_Choice
+Prompts the player to play again.
+
+### ResetGame
+Resets the game state for a new game.
+
+## Contributing
+Contributions are welcome! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
 
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
-
-- The dataset is provided by Kaggle.
-- This project was developed using Google Colab.
-
-## Contact
-
-For any questions or comments, please contact Muhammad Talha Asif at [your.email@example.com].
+- Thanks to the team members for their contributions to this project.
+- Special thanks to the authors of the assembly language book referenced in the code.
